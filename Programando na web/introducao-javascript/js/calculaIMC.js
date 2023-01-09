@@ -1,8 +1,7 @@
 var texto = document.querySelector(".titulo")
-texto.textContent = "PEDRO"
+texto.textContent = "LISTA DE PACIENTES"
 
 var pacientes = document.querySelectorAll(".paciente")
-
 
 for(i = 0; i <= pacientes.length; i++){
     
