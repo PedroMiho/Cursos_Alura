@@ -1,64 +1,55 @@
-var pow = document.querySelector(".tecla_pom")
+//Metodo de resolução da instrutora Vanessa
+function tocaSom (seletorAudio){
+    const elemento = document.querySelector(seletorAudio)
+   
+    if (elemento != null && elemento.localName === 'audio' ){
+        elemento.play();
+    }
 
-pow.addEventListener("click", (event) => {
-    event.preventDefault();    
-    document.querySelector('#som_tecla_pom').play()
-    console.log('pedro')
-})
+    else {
+        window.alert('A classe ou tag informada não é valida') 
+    }
+}
 
-let clap = document.querySelector(".tecla_clap")
+const listaDeTeclas = document.querySelectorAll('.tecla');
 
-clap.addEventListener("click", (event) => {
-    event.preventDefault();
-    document.querySelector('#som_tecla_clap').play()
+for (let contador = 0; contador < listaDeTeclas.length; contador++){
     
-})
+    const tecla = listaDeTeclas[contador];
+    const instrumento = tecla.classList[1];
+    const idAudio = `#som_${instrumento}`
+    
+    tecla.onclick = function(){
+        tocaSom(idAudio);
+    }
 
-let tim = document.querySelector(".tecla_tim")
+    tecla.onkeydown = function (evento) {
+        console.log(evento)
+        
+        if(evento.code == 'Space' || evento.key == 'Enter'){
+            tecla.classList.add('ativa')
+        }    
+    }
 
-tim.addEventListener("click", (event) => {
-    event.preventDefault();
-    document.querySelector('#som_tecla_tim').play()    
-})
+    tecla.onkeyup = function () {
+        tecla.classList.remove('ativa')
+    }
 
-let puff = document.querySelector(".tecla_puff")
+}
 
-puff.addEventListener("click", (event) => {
-    event.preventDefault();
-    document.querySelector('#som_tecla_puff').play()
-})
 
-let splash = document.querySelector(".tecla_splash")
 
-splash.addEventListener("click", (event) => {
-    event.preventDefault();
-    document.querySelector('#som_tecla_splash').play()
-})
+/*
+//Meu metodo para solucionar o problema solicitado
+const listaDeTeclas = document.querySelectorAll('.tecla');
+const audio = document.querySelectorAll('.som_audio')
 
-let toim = document.querySelector(".tecla_toim")
+for(let i = 0; i < listaDeTeclas.length; i++){
 
-toim.addEventListener("click", (event) => {
-    event.preventDefault();
-    document.querySelector('#som_tecla_toim').play()   
-})
-
-let psh = document.querySelector(".tecla_psh")
-
-psh.addEventListener("click", (event) => {
-    event.preventDefault();
-    document.querySelector('#som_tecla_psh').play()
-})
-
-let tic = document.querySelector(".tecla_tic")
-
-tic.addEventListener("click", (event) => {
-    event.preventDefault();
-    document.querySelector('#som_tecla_tic').play()    
-})
-
-let tom = document.querySelector(".tecla_tom")
-
-tom.addEventListener("click", (event) => {
-    event.preventDefault();
-    document.querySelector('#som_tecla_tom').play()    
-})
+    
+    listaDeTeclas[i].addEventListener("click", (event) => {
+        event.preventDefault();    
+        audio[i].play();
+    })    
+}
+*/
