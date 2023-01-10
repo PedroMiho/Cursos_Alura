@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+body {  
+    height: 84vh;
+    background-image: linear-gradient(to top, rgb(107, 151, 185),  #2B5B8F 100%);
+}
+
+h1{
+    color: white;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+    max-width: 400px;
+    height: 400px;
+    padding: 10px;
+    background-color: #E5E5E5;
+    border-radius: 40px;
+    margin: auto;
+    /*text-align: center;*/
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.493);
+}
+
+section > div > .tecla {
+    background-color: white;
+    width: 110px;
+    height: 110px;
+    margin: 5px;
+    border-radius: 15px;
+    color: red;
+    font-weight: bold;
+    font-size: 1.5em;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.507);
+    border: none;
+}
+
+.tecla.ativa, .tecla:active {
+    background-color: red;
+    border: 4px solid  red;
+    color: white;
+    outline: none;
+}
+
+section > div > .tecla:focus {
+    outline: none;
+    box-shadow: 1px 1px 10px yellow;
+}
+
+section > div > .tecla:hover{
+    border: none;
+}
+  
