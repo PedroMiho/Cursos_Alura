@@ -37,15 +37,16 @@ const pecas = {
 
 controleAjuste.forEach((elemento) => {
     elemento.addEventListener("click", (evento) => {
-        quantidadeEquipamentos(evento.target.innerHTML, evento.target.parentNode)
-        alteraDados(evento.target.dataset.peca, evento.target.dataset.controle)
+        let quantidade = evento.target.parentNode
+        quantidadeEquipamentos(evento.target.innerHTML, quantidade)
+        alteraDados(evento.target.dataset.peca, evento.target.dataset.controle, quantidade)
 
     })
 }) 
 
 function quantidadeEquipamentos(operador, valorAtual){
     
-    var dados = valorAtual.querySelector('[data-contador]')  
+    let dados = valorAtual.querySelector('[data-contador]')  
 
     if (operador === "+" && dados.value < 15){
         dados.value = parseInt(dados.value) + 1
@@ -60,14 +61,16 @@ function quantidadeEquipamentos(operador, valorAtual){
     
 }
 
-function alteraDados(peca, operador){
+function alteraDados(peca, operador, valorAtual ){
+
+    let dados = valorAtual.querySelector('[data-contador]')  
 
     estatistica.forEach((elemento) => {
 
-        if(operador === "+"){
+        if(operador === "+" && dados.value < 15){
             elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
         }
-        if(operador === "-"){
+        if(operador === "-" && dados.value > 0){
             elemento.textContent = parseInt(elemento.textContent) - pecas[peca][elemento.dataset.estatistica]
         }
         
