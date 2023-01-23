@@ -24,13 +24,16 @@ form.addEventListener('submit', (evento) => {
         itemAtual.id = existe.id
         console.log(existe.id)
         atualizaElemento(itemAtual)
+        itens[itens.findIndex(elemento => elemento.id === existe.id)] = itemAtual
     }
     else {
-        itemAtual.id = itens.length
+        itemAtual.id = itens[itens.length - 1] ? (itens[itens.length-1]).id + 1 : 0
         atualizaFormulario(itemAtual)
         itens.push(itemAtual)
+
     }
 
+    //Adiciona itens no localStorage
     localStorage.setItem("itens", JSON.stringify(itens))
 
     //Apaga os inputs
@@ -50,10 +53,28 @@ function atualizaFormulario (item){
 
     novoItem.appendChild(numeroItens) //Adicionar uma tag dentro de uma tag pai
     novoItem.innerHTML += item.nome
-    
+    novoItem.appendChild(deletaItem(item.id))
     lista.appendChild(novoItem)
 }
 
 function atualizaElemento(item){
    document.querySelector("[data-id='"+item.id+"']").innerHTML = item.quantidade
+}
+
+function deletaItem (id) {
+    const botaoDeleta = document.createElement('button')
+    botaoDeleta.innerHTML = "x"
+    botaoDeleta.addEventListener('click', function () {
+        deletaElemento(this.parentNode, id)
+    })
+
+    return botaoDeleta
+}
+
+function deletaElemento (tag, id) {
+    tag.remove()
+    itens.splice(itens.findIndex(elemento => elemento.id === id), 1)
+    localStorage.setItem("itens", JSON.stringify(itens))
+
+
 }
