@@ -15,7 +15,7 @@ function verificaValorValido(chute){
     if(numero === numeroSecreto){
         document.body.innerHTML = `
             <h1>Você Acertou !!!</h1>
-            <h3>O número secreto era ${numeroSecreto}
+            <h3>O número secreto era ${numeroSecreto}</h3>
             <button class='botao'>Jogar Novamente</button>
         `
         const botaoTR = document.querySelector('.botao')
