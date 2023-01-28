@@ -11,3 +11,5 @@
 ### Número Secreto
 [Número Secreto](https://numerosecreto-eight.vercel.app/)
 
+### Adicionando Itens na Mochila
+[Mochila](https://adicionando-itens-na-mochila.vercel.app/)
