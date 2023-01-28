@@ -15,4 +15,4 @@
 [Mochila](https://adicionando-itens-na-mochila.vercel.app/)
 
 ### Escutando barulho de instrumentos
-[Instrumentos]([https://adicionando-itens-na-mochila.vercel.app/](https://cursos-alura-qjf8.vercel.app/))
+[Instrumentos](https://cursos-alura-qjf8.vercel.app/)
