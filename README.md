@@ -17,5 +17,8 @@
 ### Escutando barulho de instrumentos
 [Instrumentos](https://cursos-alura-qjf8.vercel.app/)
 
-### Filtrando  livrs com array
+### Filtrando  livros com metodos array
 [Filtrando Livros](https://filtrando-livros-com-metodos-array.vercel.app/)
+
+### Fazendo requisições de API
+[Tratando API]()
