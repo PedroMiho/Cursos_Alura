@@ -1,0 +1,9 @@
+.rodape {
+    background-color: #6278F7;
+}
+
+.rodape img{
+    display: block;
+    margin: auto;
+    width: 50vw;
+}
